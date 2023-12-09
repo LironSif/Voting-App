@@ -14,11 +14,23 @@ const Card = ({
   const { userData, updateVote } = useUserData();
 
   const HandleClick = () => {
-    if (userData.vote && changVote) {
+    console.log(userData)
+    console.log(changVote)
+    console.log("HandleClick runnig")
+
+    if (userData.Voted && changVote) {
+      console.log(userData.Voted)
+      console.log(changVote)
+
       setConfirmVote(title);
-    } else if (userData.vote) {
+
+    } else if (userData.Voted) {
+      console.log(userData.Voted)
+
       setChangeVote(true);
+
     }
+    console.log("none")
   };
 
   const HandleCancel = () => {
@@ -39,16 +51,16 @@ const Card = ({
       <img className="card-image" src={image} alt={title} />
       <div className="card-content">
         <h3 className="card-title">{title}</h3>
-        <h2>{`Votes: ${votes}`}</h2>
+        <h2>{`Votes ${votes}`}</h2>
         <div className="card-actions">
           {confirmVote === title ? (
             <>
-              <button className="card-btn"  onClick={handleUpdate}>are you sure</button>
-              <button className="card-btn" onClick={HandleCancel}>cancel</button>
+              <button className="card-btn"  onClick={handleUpdate}>Are you sure ?</button>
+              <button className="card-btn" onClick={HandleCancel}>Cancel</button>
             </>
           ) : (
             <button className="card-btn" onClick={HandleClick}>
-              {(userData.vote && !changVote ? "change my " : "") + "Vote"}
+              {(userData.vote && !changVote ? "Change My " : "") + "Vote"}
             </button>
           )}
         </div>

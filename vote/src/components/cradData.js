@@ -6,19 +6,19 @@ import image4 from '../res/img/4.jpg';
 const items = [
     {
         image: image1, 
-        title: 'amazon-river'
+        title: 'Amazon river'
     },
     {
         image: image2, 
-        title: 'desert-dunes'
+        title: 'Desert dunes'
     },
     {
         image: image3, 
-        title: 'japanese-temple'
+        title: 'Japanese temple'
     },
     {
         image: image4, 
-        title: 'rainforest'
+        title: 'Rainforest'
     }
 ];
 

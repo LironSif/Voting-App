@@ -27,7 +27,7 @@ export const UserDataProvider = ({ children }) => {
   const logIn = async (payload) => {
     try {
       const response = await instance.get("users");
-      console.log("respons came back")
+      console.log("response came back")
       const userList = response.data
       
       const user = userList.find((el) => el.email === payload.email);
@@ -40,6 +40,7 @@ export const UserDataProvider = ({ children }) => {
         }
         return acc
       },{})
+      
       setVoteData(cardVotes)
       console.log("complete login")
 

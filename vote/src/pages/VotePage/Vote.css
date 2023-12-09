@@ -29,3 +29,10 @@
     text-shadow: 0 0 4px rgba(35, 34, 34, 0.4);
     text-align: left; 
 }
+
+@media (max-width: 768px) {
+    .voting-container {
+        flex-direction: column;
+        padding: 2vw; 
+    }
+}
