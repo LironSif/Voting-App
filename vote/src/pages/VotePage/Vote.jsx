@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useUserData } from '../../context/UserDataContext';
 import Nav from '../../components/Nav/Nav.jsx';
-import '../VotePage/vote.css';
+import '../VotePage/Vote.css'
 import Card from '../../components/Card/Card.jsx';
 import items from '../../components/cradData.js'; // Replace with your items array path
 
