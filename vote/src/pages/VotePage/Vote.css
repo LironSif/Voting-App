@@ -1,0 +1,31 @@
+.vote-page {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e2dada; 
+    paddingrgb(242, 242, 242)px; 
+}
+
+.vote-page .head h2 {
+    color: #edbf68;
+    text-shadow: 0 0 4px rgba(35, 34, 34, 0.4);
+    text-align: center; 
+    font-weight: bold;
+    margin-bottom: 30px; 
+}
+
+.voting-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px; 
+    padding: 3vw; 
+    margin: 0 auto; 
+    gap: 20px;
+    
+    
+}
+
+.voting-container h3 {
+    color: #edbf68;
+    text-shadow: 0 0 4px rgba(35, 34, 34, 0.4);
+    text-align: left; 
+}

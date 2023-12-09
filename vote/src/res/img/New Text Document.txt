@@ -1,0 +1,4 @@
+amazon-river
+desert-dunes
+japanese-temple
+rainforest
