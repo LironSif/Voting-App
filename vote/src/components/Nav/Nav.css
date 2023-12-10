@@ -2,6 +2,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
     background: linear-gradient(#31220b, #382e1b);
     padding: 0.5em 2em;
     font-family: "Georgia", serif;
