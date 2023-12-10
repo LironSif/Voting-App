@@ -26,7 +26,7 @@ This is a phone-responsive voting site built using React. The application featur
 _More users are available in the API, accessible from the admin panel._
 
 ## Site's Preview
-![Alt text](../vote/src/res/img/login.PNG) ![Alt text](../vote/src/res/img/vote.PNG) ![Alt text](../vote/src/res/img/admin.PNG)
+![Alt text](./vote/src/res/img/login.PNG) ![Alt text](./vote/src/res/img/vote.PNG) ![Alt text](./vote/src/res/img/admin.PNG)
 
 ## Note
 This site is a work in progress and may contain some bugs.
