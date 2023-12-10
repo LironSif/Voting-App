@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../Nav/Nav.css";
 import { useUserData } from "../../context/UserDataContext";
 import image from "../../res/img/logo.png";
+
 
 const Nav = () => {
   const { userData } = useUserData();
@@ -10,8 +12,11 @@ const Nav = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  console.log("nav is on");
-  console.log(userData);
+
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
   if (!userData) return null;
 
   return (
@@ -26,9 +31,9 @@ const Nav = () => {
         </button>
         {isOpen && (
           <div className="nav-links">
-            <a href="/logout">Logout</a>
-            <a href="/vote">Vote</a>
-            {userData.isAdmin && <a href="/admin">Admin</a>}
+            <Link to="/logout" onClick={handleLogout}>Logout</Link>
+            <Link to="/vote">Vote</Link>
+            {userData.isAdmin && <Link to="/admin">Admin</Link>}
           </div>
         )}
       </div>
