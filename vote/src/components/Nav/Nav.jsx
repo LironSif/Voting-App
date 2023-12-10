@@ -31,7 +31,7 @@ const Nav = () => {
         </button>
         {isOpen && (
           <div className="nav-links">
-            <Link to="/logout" onClick={handleLogout}>Logout</Link>
+            <Link to="/login" onClick={handleLogout}>Logout</Link>
             <Link to="/vote">Vote</Link>
             {userData.isAdmin && <Link to="/admin">Admin</Link>}
           </div>
