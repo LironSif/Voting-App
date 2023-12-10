@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
 import "../Admin/Admin.css";
 import { useUserData } from "../../context/UserDataContext";
-import Nav from '../../components/Nav/Nav.jsx';
+import Nav from "../../components/Nav/Nav.jsx";
 
 const Admin = () => {
   const { adminData, listData, listDatafunc, userData } = useUserData();
-  
+
   useEffect(() => {
     listDatafunc();
   }, []);
 
-  
   return (
     <div className="admin page">
       <h2>Admin Page</h2>

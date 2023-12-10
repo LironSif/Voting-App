@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Nav/Nav.css";
 import { useUserData } from "../../context/UserDataContext";
-import image from '../../res/img/logo.png';
+import image from "../../res/img/logo.png";
 
 const Nav = () => {
   const { userData } = useUserData();
@@ -10,9 +10,9 @@ const Nav = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-console.log("nav is on")
-console.log(userData)
-  if (!userData ) return null;
+  console.log("nav is on");
+  console.log(userData);
+  if (!userData) return null;
 
   return (
     <nav>

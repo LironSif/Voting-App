@@ -16,8 +16,6 @@ export const UserDataProvider = ({ children }) => {
     },
   });
 
-
-  
   const listDatafunc = async () => {
     try {
       const response = await instance.get("users");
@@ -39,22 +37,22 @@ export const UserDataProvider = ({ children }) => {
   const logIn = async (payload) => {
     try {
       const response = await instance.get("users");
-      console.log("response came back")
-      const userList = response.data
-      
+      console.log("response came back");
+      const userList = response.data;
+
       const user = userList.find((el) => el.email === payload.email);
       console.log(user);
-      const cardVotes = userList.reduce((acc, el)=>{
-        if(acc[el.Voted]){
-          acc[el.Voted] += 1
-        }else{
-          acc[el.Voted] = 1
+      const cardVotes = userList.reduce((acc, el) => {
+        if (acc[el.Voted]) {
+          acc[el.Voted] += 1;
+        } else {
+          acc[el.Voted] = 1;
         }
-        return acc
-      },{})
-      
-      setVoteData(cardVotes)
-      console.log("complete login")
+        return acc;
+      }, {});
+
+      setVoteData(cardVotes);
+      console.log("complete login");
 
       if (!user) {
         alert("user not found");
@@ -76,37 +74,46 @@ export const UserDataProvider = ({ children }) => {
   const updateVote = async (title, user) => {
     const updatedUser = {
       ...user,
-      Voted: title, 
-      vote: true
+      Voted: title,
+      vote: true,
     };
-  
+
     try {
       const response = await instance.put(`users/${user.id}`, updatedUser);
-      console.log('Vote updated:', response.data);
-      setUserData(response.data)
-      console.log("setiing admin data")
-      const newVotes ={...voteData}
-      if(newVotes[title]){
-        newVotes[title]= newVotes[title]+1
-      }else{
-        newVotes[title]= 1
+      console.log("Vote updated:", response.data);
+      setUserData(response.data);
+      console.log("setiing admin data");
+      const newVotes = { ...voteData };
+      if (newVotes[title]) {
+        newVotes[title] = newVotes[title] + 1;
+      } else {
+        newVotes[title] = 1;
       }
-      if(user.Voted !== ''){
-        newVotes[user.Voted]= newVotes[user.Voted]-1
+      if (user.Voted !== "") {
+        newVotes[user.Voted] = newVotes[user.Voted] - 1;
       }
-      setVoteData(newVotes)
-      
+      setVoteData(newVotes);
     } catch (error) {
-      console.error('Error updating vote:', error);
+      console.error("Error updating vote:", error);
     }
   };
-  
 
-  
-  const logOut = () => setUserData(null)
+  const logOut = () => setUserData(null);
 
   return (
-    <UserDataContext.Provider value={{ userData, fetchUserData, logIn, logOut, voteData, updateVote, adminData, listData,listDatafunc}}>
+    <UserDataContext.Provider
+      value={{
+        userData,
+        fetchUserData,
+        logIn,
+        logOut,
+        voteData,
+        updateVote,
+        adminData,
+        listData,
+        listDatafunc,
+      }}
+    >
       {children}
     </UserDataContext.Provider>
   );
