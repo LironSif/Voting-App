@@ -5,7 +5,7 @@ import Nav from '../../components/Nav/Nav.jsx';
 
 const Admin = () => {
   const { adminData, listData, listDatafunc, userData } = useUserData();
-  console.log(userData + "admin page no data");
+  
   useEffect(() => {
     listDatafunc();
   }, []);
@@ -27,7 +27,6 @@ const Admin = () => {
               </li>
             ))}
         </ul>
-        {console.log("no admin data")}
       </div>
     </div>
   );

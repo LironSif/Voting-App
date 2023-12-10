@@ -13,7 +13,7 @@ const Vote = () => {
     console.log(userData.isAdmin)
     console.log(userData + "admin page no data");
     useEffect(() => {
-        console.log(adminData);
+        console.log(adminData + "/llll");
     }, [adminData]);
     return (
         <main className='vote-page page'>

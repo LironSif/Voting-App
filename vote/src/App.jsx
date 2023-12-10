@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={userData ? <Navigate replace to="/vote" /> : <Navigate replace to="/login" />} />
         <Route path="/login" element={userData ? <Navigate replace to="/vote" /> : <Login />} />
-        <Route path="/vote" element={userData ? <Vote /> : <Navigate replace to="/login" />} />
+        <Route path="/vote" element={userData ? <Vote /> : <Navigate replace to="/Vote" />} />
         <Route path="/Admin" element={<Admin />} />
 
         <Route path="*" element={<Navigate replace to="/" />} />
