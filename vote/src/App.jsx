@@ -14,16 +14,17 @@ function App() {
     console.log(userData);
   }, [userData]);
 
+  const isAdmin = userData?.isAdmin; 
+
   return (
-    <Router >
+    <Router>
       <Nav/>
       <Routes>
         <Route path="/" element={userData ? <Navigate replace to="/vote" /> : <Navigate replace to="/login" />} />
         <Route path="/login" element={userData ? <Navigate replace to="/vote" /> : <Login />} />
         <Route path="/vote" element={userData ? <Vote /> : <Navigate replace to="/login" />} />
-        <Route path="/admin" element={userData ? <Admin /> : <Navigate replace to="/login" />} />
-        {/* <Route path="/admin" element={<Admin />} /> */}
-        {/* Redirect all unknown routes to the base URL */}
+        <Route path="/Admin" element={<Admin />} />
+
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </Router>
@@ -31,4 +32,3 @@ function App() {
 }
 
 export default App;
-

@@ -7,6 +7,7 @@ export const UserDataProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
   const [adminData, setAdminData] = useState(null);
   const [voteData, setVoteData] = useState(null);
+  const [listData, setListData] = useState(null);
 
   const instance = axios.create({
     baseURL: "https://6571bb50d61ba6fcc013639c.mockapi.io/sifiVote/",
@@ -14,6 +15,17 @@ export const UserDataProvider = ({ children }) => {
       "Content-Type": "application/json",
     },
   });
+
+
+  
+  const listDatafunc = async () => {
+    try {
+      const response = await instance.get("users");
+      setListData(response.data);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
 
   const fetchUserData = async () => {
     try {
@@ -72,6 +84,7 @@ export const UserDataProvider = ({ children }) => {
       const response = await instance.put(`users/${user.id}`, updatedUser);
       console.log('Vote updated:', response.data);
       setUserData(response.data)
+      console.log("setiing admin data")
       const newVotes ={...voteData}
       if(newVotes[title]){
         newVotes[title]= newVotes[title]+1
@@ -93,7 +106,7 @@ export const UserDataProvider = ({ children }) => {
   const logOut = () => setUserData(null)
 
   return (
-    <UserDataContext.Provider value={{ userData, fetchUserData, logIn, logOut, voteData, updateVote}}>
+    <UserDataContext.Provider value={{ userData, fetchUserData, logIn, logOut, voteData, updateVote, adminData, listData,listDatafunc}}>
       {children}
     </UserDataContext.Provider>
   );

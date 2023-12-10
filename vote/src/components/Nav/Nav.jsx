@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import "../Nav/Nav.css";
 import { useUserData } from "../../context/UserDataContext";
-import image from '../../res/img/logo.png'
+import image from '../../res/img/logo.png';
 
 const Nav = () => {
-  const { userData, logIn } = useUserData();
+  const { userData } = useUserData();
   const [isOpen, setIsOpen] = useState(false);
-
-  console.log(userData);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
- if(!userData) return null
- 
+  if (!userData) return null;
+
   return (
     <nav>
       <div className="nav-logo">
@@ -29,7 +27,7 @@ const Nav = () => {
           <div className="nav-links">
             <a href="/logout">Logout</a>
             <a href="/vote">Vote</a>
-            <a href="/admin">Admin</a>
+            {userData.isAdmin && <a href="/admin">Admin</a>}
           </div>
         )}
       </div>

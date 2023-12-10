@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useUserData } from '../../context/UserDataContext';
 import Nav from '../../components/Nav/Nav.jsx';
 import '../VotePage/Vote.css'
 import Card from '../../components/Card/Card.jsx';
-import items from '../../components/cradData.js'; // Replace with your items array path
+import items from '../../components/cradData.js'; 
 
 const Vote = () => {
-    const { userData, fetchUserData, logOut, voteData } = useUserData();
+    
+    const { userData, fetchUserData, logOut, voteData , adminData} = useUserData();
     const [confirmVote, setConfirmVote] = useState('')
     const [changVote, setChangeVote] = useState(false)
-
+    console.log(userData.isAdmin)
+    console.log(userData + "admin page no data");
+    useEffect(() => {
+        console.log(adminData);
+    }, [adminData]);
     return (
         <main className='vote-page page'>
             <div className="head">
