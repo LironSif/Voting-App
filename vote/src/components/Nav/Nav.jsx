@@ -10,8 +10,9 @@ const Nav = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  if (!userData) return null;
+console.log("nav is on")
+console.log(userData)
+  if (!userData ) return null;
 
   return (
     <nav>

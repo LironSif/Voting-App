@@ -3,20 +3,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(50,35,13);
+    background-color: rgb(50, 35, 13);
     color: #f5f5f5;
-    height: 100vh;
     padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
-h2 {
+.admin h2 {
     color: #e8a600;
-    margin-bottom: 2rem; 
+    margin-bottom: 6rem;
+    font-family: "Georgia", serif;
+    font-size: 3em;
 }
 
 .vote-table {
     overflow-y: auto;
-    width: 80vh;
+    width: 80%;
+    max-width: 80vh;
     height: 50vh;
     background-color: #7a6a53;
     border-radius: 10px;
@@ -46,4 +50,30 @@ h2 {
 .vote-status {
     font-weight: bold;
     color: #e8a600;
+}
+
+@media (max-width: 768px) {
+    .admin h2 {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .vote-table {
+        width: 90%;
+    }
+
+    .vote-row {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin h2 {
+        font-size: 1.5rem;
+    }
+
+    .vote-table {
+        width: 100%;
+    }
 }

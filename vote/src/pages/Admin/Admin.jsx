@@ -9,6 +9,8 @@ const Admin = () => {
   useEffect(() => {
     listDatafunc();
   }, []);
+
+  
   return (
     <div className="admin page">
       <h2>Admin Page</h2>
